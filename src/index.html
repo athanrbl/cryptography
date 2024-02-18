@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body class="container-fluid" style="height: 100%;">
+    <div class="row">
+
+      <div class="col-md-6" style="align-items: center;">
+        <div class="row" id="inout">
+          <textarea class="form-control" rows="7" placeholder="Input Text"></textarea>
+          <textarea class="form-control" rows="7" placeholder="Output Text"></textarea>
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <div class="row" id="Encryption">
+          <h2>Encryption</h2>
+          <label for="encrypt">Encryption Passphrase</label>
+          <input type="text" class="form-control" id="encrypt">
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-warning" onkeyup="Encrypt1()">Cipher 1</button>
+            <button type="button" class="btn btn-warning" onkeyup="Encrypt2()">Cipher 2</button>
+            <button type="button" class="btn btn-warning" onkeyup="Encrypt3()">Cipher 3</button>
+          </div>
+          
+        </div>
+
+        <div class="row" id="Decryption">
+          <h2>Dencryption</h2>
+          <label for="decrypt">Decryption Passphrase</label>
+          <input type="text" class="form-control" id="decrypt">
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-warning" onkeyup="Decrypt1()">Cipher 1</button>
+            <button type="button" class="btn btn-warning" onkeyup="Decrypt2()">Cipher 2</button>
+            <button type="button" class="btn btn-warning" onkeyup="Decrypt3()">Cipher 3</button>
+          </div>
+        </div>
+
+        <!-- onkeyup="function(), -->
+        <script src='./encryption.js'></script>
+        <script src='./decryption.js'></script>
+      </div>
+
+    </div>
+  </body>
+</html>

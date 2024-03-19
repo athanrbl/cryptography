@@ -8,7 +8,7 @@
   </head>
   <body class="container-fluid" style="height: 100%;">
     <div class="row">
-
+     
       <div class="col-md-6" style="align-items: center;">
         <div class="row" id="inout">
           <textarea class="form-control" rows="7" placeholder="Input Text"></textarea>
@@ -22,6 +22,11 @@
           <label for="encrypt">Encryption Passphrase</label>
           <input type="text" class="form-control" id="encrypt">
 
+          <label for="encrypt">Shiftkey</label>
+          <input type="number" class="form-control" min="1" max="25" id="encrypt" value=1>
+
+          
+
           <div class="btn-group">
             <button type="button" class="btn btn-warning" onkeyup="Encrypt1()">Cipher 1</button>
             <button type="button" class="btn btn-warning" onkeyup="Encrypt2()">Cipher 2</button>
@@ -31,7 +36,7 @@
         </div>
 
         <div class="row" id="Decryption">
-          <h2>Dencryption</h2>
+          <h2>Decryption</h2>
           <label for="decrypt">Decryption Passphrase</label>
           <input type="text" class="form-control" id="decrypt">
 

@@ -3,26 +3,26 @@ function Encrypt1() {
 }
 
 
-function Encrypt2(text, shift) {
+function Encrypt2(message, key) {
     //Ceaser Cipher
 	
 	// Encrypts text using a shift 
-	let result=""
-	for (let i = 0; i < text.length; i++)
-	{
-		let char = text[i];
-		if (char.toUpperCase(text[i]))
-		{
-			let ch = String.fromCharCode((char.charCodeAt(0) + shift-65) % 26 + 65);
-			result += ch;
-		}
-		else
-		{
-			let ch = String.fromCharCode((char.charCodeAt(0) + shift-97) % 26 + 97);
-			result += ch;
-		}
-	}
-	return result;
+	let encryptedMessage = '';
+
+    for (let i = 0; i < message.length; i++) {
+        const char = message[i];
+        let encryptedChar = char;
+
+        if (char.match(/[A-Za-z]/)) {
+            const baseCharCode = char.toLowerCase() === char ? 'a'.charCodeAt(0) : 'A'.charCodeAt(0);
+            const shiftedCharCode = (char.charCodeAt(0) - baseCharCode + key) % 26;
+            encryptedChar = String.fromCharCode(baseCharCode + shiftedCharCode);
+        }
+
+        encryptedMessage += encryptedChar;
+    }
+
+    return encryptedMessage;
 }
 
 

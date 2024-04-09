@@ -11,8 +11,8 @@
 
       <div class="col-md-6" style="align-items: center;">
         <div class="row" id="inout">
-          <textarea class="form-control" rows="7" placeholder="Input Text"></textarea>
-          <textarea class="form-control" rows="7" placeholder="Output Text"></textarea>
+          <textarea id="InputT" class="form-control" rows="7" placeholder="Normal Text"></textarea>
+          <textarea id="OutputT" class="form-control" rows="7" placeholder="Cipher Text"></textarea>
         </div>
       </div>
       
@@ -23,9 +23,11 @@
           <input type="text" class="form-control" id="encrypt">
 
           <div class="btn-group">
-            <button type="button" class="btn btn-warning" onkeyup="Encrypt1()">Cipher 1</button>
-            <button type="button" class="btn btn-warning" onkeyup="Encrypt2()">Cipher 2</button>
-            <button type="button" class="btn btn-warning" onkeyup="Encrypt3()">Cipher 3</button>
+            <button type="button" class="btn btn-warning" onclick="Encrypt1()">Cipher 1</button>
+            <button type="button" class="btn btn-warning" onkeyup="">Cipher 2</button>
+            <button type="button" class="btn btn-warning" onkeyup="">Cipher 3</button>
+            <!-- onkeyup="function(),
+            <script>require('./encryption.js')</script>-->
           </div>
           
         </div>
@@ -39,14 +41,47 @@
             <button type="button" class="btn btn-warning" onkeyup="Decrypt1()">Cipher 1</button>
             <button type="button" class="btn btn-warning" onkeyup="Decrypt2()">Cipher 2</button>
             <button type="button" class="btn btn-warning" onkeyup="Decrypt3()">Cipher 3</button>
+            <!-- onkeyup="function(),
+            //<script>require('./decryption.js')</script> -->
           </div>
         </div>
 
-        <!-- onkeyup="function(), -->
-        <script src='./encryption.js'></script>
-        <script src='./decryption.js'></script>
       </div>
 
     </div>
   </body>
 </html>
+
+<script>
+// cipher 1
+let l1 = ['a','b','c','d','e']
+let l2 = ['f','g','h','i','j']
+let l3 = ['k','l','m','n','o']
+let l4 = ['p','q','r','s','t']
+let l5 = ['u','v','w','x','y'] // missing z
+let arrayList = [l1,l2,l3,l4,l5]
+let letterArray = []
+let output = ""
+
+// ---------------
+
+function Encrypt1() {
+
+    let input = document.getElementById("InputT").value // input 'hey' : array = ['h','e','y']
+    letterArray = input.split('') // split by each character
+
+    letterArray.forEach(character => {
+      
+        arrayList.forEach(listNumbered => {
+          let i = 1 //arraylist INDEX
+            if(listNumbered.indexOf(character) != -1) { // if character is found (-1 is not found)
+              output += i // should return list number
+              output += listNumbered.indexOf(character)+1 // should return character index in list
+              i++
+            } else {return}
+        });
+    })
+    document.getElementById("OutputT").value = output //returns output
+    output = ""
+}
+</script>

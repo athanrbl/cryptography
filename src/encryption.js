@@ -11,9 +11,10 @@ let output = ""
 
 // ---------------
 
-function Encrypt1() {
+/*export default*/ function Encrypt1() {
 
-    let input = prompt('Encrypt a word: ') // input 'hey' : array = ['h','e','y']
+    let input = document.getElementById("InputT").textContent // input 'hey' : array = ['h','e','y']
+    console.log(input)
     letterArray = input.split('') // split by each character
     letterArray.forEach(letter => {
 
@@ -24,11 +25,10 @@ function Encrypt1() {
         });
     })
     console.log('Your result is: ' + output)
-
     // lists = x, list index = y
 }
 
-
+/*
 function Encrypt2() {
     return
 }
@@ -36,4 +36,4 @@ function Encrypt2() {
 
 function Encrypt3() {
     return
-}
+}*/

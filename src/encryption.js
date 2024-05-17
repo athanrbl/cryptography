@@ -33,24 +33,23 @@ function Encrypt1() {
     output = ""
 }
 
-function Encrypt2() {
-    const message = document.getElementById("InputT").value;
-    const key = parseInt(document.getElementById("encrypt").value);
-    let encryptedMessage = " ";
 
-    for (let i = 0; i < message.length; i++) {
-        const char = message[i];
-        let encryptedChar = char;
+const charToNum = {'a': 10, 'b': 11, 'c': 12, 'd': 13, 'e': 14, 'f': 15, 'g': 16, 'h': 17, 'i': 18, 'j': 19, 'k': 20, 'l': 21, 'm': 22, 'n': 23, 'o': 24, 'p': 25, 'q': 26, 'r': 27, 's': 28, 't': 29, 'u': 30, 'v': 31, 'w': 32, 'x': 33, 'y': 34, 'z': 36, ' ': 37};
 
-        if (char.match(/[A-Za-z]/)) {
-            const baseCharCode = char.toLowerCase() === char ? 'a'.charCodeAt(0) : 'A'.charCodeAt(0);
-            const shiftedCharCode = (char.charCodeAt(0) - baseCharCode + key) % 26;
-            encryptedChar = String.fromCharCode(baseCharCode + shiftedCharCode);
-        }
+function charsToNums(inputStr) {
+  let nums = '';
+  for (let char of inputStr) {
+      if (char.toLowerCase() in charToNum) {
+          nums += charToNum[char.toLowerCase()];
+      } else {
+          nums += char;
+      }
+  }
+  return nums;
+}
 
-        encryptedMessage += encryptedChar;
-    }
-
-    document.getElementById("InputT").value = encryptedMessage;
-    encryptedMessage=""
+function Encrypt3() {
+  const inputChars = document.getElementById('inputChars').value;
+  const encryptedNums = charsToNums(inputChars);
+  document.getElementById('output').innerText = 'Encryption: ' + encryptedNums;
 }

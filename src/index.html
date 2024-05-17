@@ -38,9 +38,9 @@
           <input type="text" class="form-control" id="decrypt">
 
           <div class="btn-group">
-            <button type="button" class="btn btn-warning" onkeyup="Decrypt1()">Cipher 1</button>
-            <button type="button" class="btn btn-warning" onkeyup="Decrypt2()">Cipher 2</button>
-            <button type="button" class="btn btn-warning" onkeyup="Decrypt3()">Cipher 3</button>
+            <button type="button" class="btn btn-warning" onclick="Decrypt1()">Cipher 1</button>
+            <button type="button" class="btn btn-warning" onkeyup="">Cipher 2</button>
+            <button type="button" class="btn btn-warning" onkeyup="">Cipher 3</button>
             <!-- onkeyup="function(),
             //<script>require('./decryption.js')</script> -->
           </div>
@@ -58,10 +58,16 @@ let l1 = ['a','b','c','d','e']
 let l2 = ['f','g','h','i','j']
 let l3 = ['k','l','m','n','o']
 let l4 = ['p','q','r','s','t']
-let l5 = ['u','v','w','x','y'] // missing z
-let arrayList = [l1,l2,l3,l4,l5]
+let l5 = ['u','v','w','x','y']
+let l6 = ['z',' ',',','?','\'']
+let arrayList = [l1,l2,l3,l4,l5,l6]
+// used for encoding
 let letterArray = []
 let output = ""
+
+// used for decoding
+let numberArray = []
+let input = ""
 
 // ---------------
 
@@ -71,17 +77,32 @@ function Encrypt1() {
     letterArray = input.split('') // split by each character
 
     letterArray.forEach(character => {
-      
-        arrayList.forEach(listNumbered => {
-          let i = 1 //arraylist INDEX
-            if(listNumbered.indexOf(character) != -1) { // if character is found (-1 is not found)
-              output += i // should return list number
-              output += listNumbered.indexOf(character)+1 // should return character index in list
-              i++
-            } else {return}
+
+        arrayList.forEach((listNumbered, i) => {
+          console.log(letterArray, character, listNumbered, listNumbered.indexOf(character))
+          if(listNumbered.indexOf(character) != -1) { // if character is found (-1 is not found)
+            output += i+1 // should return list number
+            output += listNumbered.indexOf(character)+1 // should return character index in list
+          } else {return}
         });
     })
     document.getElementById("OutputT").value = output //returns output
     output = ""
+}
+
+function Decrypt1() {
+
+let output = document.getElementById("OutputT").value // '111211' : array = ['11','12','11']
+numberArray = output.match(/.{1,2}/g) || []; // match returns a split every N characters
+
+numberArray.forEach(pair => {
+    let pairArray = pair.split('') //splits the pair into 2 numbers, list - index
+    let listSelect = arrayList[pairArray[0]-1]
+    let letter = listSelect[pairArray[1]-1]
+    console.log(pair, listSelect, letter)
+    input += letter
+})
+document.getElementById("InputT").value = input //returns input
+input = ""
 }
 </script>

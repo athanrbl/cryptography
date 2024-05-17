@@ -25,8 +25,8 @@ function Decrypt1() {
 
 function Decrypt2() {
     const encryptedMessage = document.getElementById("OutputT").value;
-    const key = parseInt(document.getElementById("encrypt").value);
-    let decryptedMessage = " ";
+    const key = parseInt(document.getElementById("decrypt").value);
+    let decryptedMessage = "";
 
     for (let i = 0; i < encryptedMessage.length; i++) {
         const char = encryptedMessage[i];
@@ -41,7 +41,7 @@ function Decrypt2() {
         decryptedMessage += decryptedChar;
     }
 
-    document.getElementById("OutputT").value = decryptedMessage;
+    document.getElementById("InputT").value = decryptedMessage;
 }
 
 

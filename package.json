@@ -49,8 +49,7 @@
   "dependencies": {
     "bootstrap": "^5.3.2",
     "electron-compile": "^6.4.4",
-    "electron-squirrel-startup": "^1.0.0",
-    "typescript": "^5.4.3"
+    "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",

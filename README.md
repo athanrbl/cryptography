@@ -4,6 +4,10 @@
 
 The Cryptography Application is an easy to use app that allows text to be encrypted and decrypted. This application supports differenty variety of cryptographic techniques.
 
+## How to run
+
+    npm start
+
 ## Usage
 
 1. **Navigate to the Homepage**

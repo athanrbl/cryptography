@@ -43,3 +43,24 @@ function Decrypt2() {
 
     document.getElementById("OutputT").value = decryptedMessage;
 }
+
+const numToChar = {'10': 'a', '11': 'b', '12': 'c', '13': 'd', '14': 'e', '15': 'f', '16': 'g', '17': 'h', '18': 'i', '19': 'j', '20': 'k', '21': 'l', '22': 'm', '23': 'n', '24': 'o', '25': 'p', '26': 'q', '27': 'r', '28': 's', '29': 't', '30': 'u', '31': 'v', '32': 'w', '33': 'x', '34': 'y', '36': 'z', '37': ' '};
+
+function numsToChars(inputNums) {
+    let chars = '';
+    for (let i = 0; i < inputNums.length; i += 2) {
+        const num = inputNums.substring(i, i + 2);
+        if (num in numToChar) {
+            chars += numToChar[num];
+        } else {
+            chars += num;
+        }
+    }
+    return chars;
+}
+
+function Decrypt3() {
+    const inputNums = document.getElementById('inputChars').value;
+    const decryptedChars = numsToChars(inputNums);
+    document.getElementById('output').innerText = 'Decryption: ' + decryptedChars;
+}

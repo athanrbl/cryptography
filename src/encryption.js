@@ -4,9 +4,9 @@ function Encrypt1() {
 
 
 function Encrypt2() {
-    const message = document.getElementById('Input Text').value;
-    const key = parseInt(document.getElementById('encrypt').value);
-    let encryptedMessage = '';
+    const message = document.getElementById("InputT").value;
+    const key = parseInt(document.getElementById("encrypt").value);
+    let encryptedMessage = " ";
 
     for (let i = 0; i < message.length; i++) {
         const char = message[i];
@@ -21,7 +21,8 @@ function Encrypt2() {
         encryptedMessage += encryptedChar;
     }
 
-    document.getElementById('Output Text').textContent = encryptedMessage;
+    document.getElementById("InputT").value = encryptedMessage;
+    encryptedMessage=""
 }
 
 

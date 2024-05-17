@@ -1,7 +1,7 @@
 function Decryption2(){
-    const encryptedMessage = document.getElementById('message').value;
-    const key = parseInt(document.getElementById('key').value);
-    let decryptedMessage = '';
+    const encryptedMessage = document.getElementById("OutputT").value;
+    const key = parseInt(document.getElementById("encrypt").value);
+    let decryptedMessage = " ";
 
     for (let i = 0; i < encryptedMessage.length; i++) {
         const char = encryptedMessage[i];
@@ -16,5 +16,5 @@ function Decryption2(){
         decryptedMessage += decryptedChar;
     }
 
-    document.getElementById('encryptedMessage').textContent = decryptedMessage;
+    document.getElementById("OutputT").value = decryptedMessage;
 }

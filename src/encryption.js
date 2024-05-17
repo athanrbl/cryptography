@@ -8,6 +8,9 @@ const l5 = ['u','v','w','x','y']
 const l6 = ['z',' ',',','?','\'']
 const arrayList = [l1,l2,l3,l4,l5,l6]
 
+//cipher 3
+const charToNum = {'a': 10, 'b': 11, 'c': 12, 'd': 13, 'e': 14, 'f': 15, 'g': 16, 'h': 17, 'i': 18, 'j': 19, 'k': 20, 'l': 21, 'm': 22, 'n': 23, 'o': 24, 'p': 25, 'q': 26, 'r': 27, 's': 28, 't': 29, 'u': 30, 'v': 31, 'w': 32, 'x': 33, 'y': 34, 'z': 36, ' ': 37};
+
 // used for encoding
 let letterArray = []
 let output = ""
@@ -54,8 +57,6 @@ function Encrypt2() {
     document.getElementById("InputT").value = encryptedMessage;
     encryptedMessage=""
 }
-
-const charToNum = {'a': 10, 'b': 11, 'c': 12, 'd': 13, 'e': 14, 'f': 15, 'g': 16, 'h': 17, 'i': 18, 'j': 19, 'k': 20, 'l': 21, 'm': 22, 'n': 23, 'o': 24, 'p': 25, 'q': 26, 'r': 27, 's': 28, 't': 29, 'u': 30, 'v': 31, 'w': 32, 'x': 33, 'y': 34, 'z': 36, ' ': 37};
 
 function charsToNums(inputStr) {
   let nums = '';

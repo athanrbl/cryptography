@@ -1,9 +1,9 @@
-
 // resources
+//cipher 3
+const numToChar = {'10': 'a', '11': 'b', '12': 'c', '13': 'd', '14': 'e', '15': 'f', '16': 'g', '17': 'h', '18': 'i', '19': 'j', '20': 'k', '21': 'l', '22': 'm', '23': 'n', '24': 'o', '25': 'p', '26': 'q', '27': 'r', '28': 's', '29': 't', '30': 'u', '31': 'v', '32': 'w', '33': 'x', '34': 'y', '36': 'z', '37': ' '};
 // used for decoding
 let numberArray = []
 let input = ""
-
 // ---------------
 
 function Decrypt1() {
@@ -44,7 +44,6 @@ function Decrypt2() {
     document.getElementById("OutputT").value = decryptedMessage;
 }
 
-const numToChar = {'10': 'a', '11': 'b', '12': 'c', '13': 'd', '14': 'e', '15': 'f', '16': 'g', '17': 'h', '18': 'i', '19': 'j', '20': 'k', '21': 'l', '22': 'm', '23': 'n', '24': 'o', '25': 'p', '26': 'q', '27': 'r', '28': 's', '29': 't', '30': 'u', '31': 'v', '32': 'w', '33': 'x', '34': 'y', '36': 'z', '37': ' '};
 
 function numsToChars(inputNums) {
     let chars = '';
